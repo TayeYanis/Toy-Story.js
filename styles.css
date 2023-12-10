@@ -1,0 +1,183 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body {
+    font-family: "Arial";
+    background-image: url(images/Fond_andy.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo{
+    height: 100px;
+}
+
+#card-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.toy-card {
+    width: 290px;
+    background: linear-gradient(rgba(49, 31, 3, 0.986), rgb(117, 116, 116));
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+}
+
+.toy-card:hover {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+    transition: 0.5s;
+    height: 350px;
+    transition: 1.5s;
+    transform: scale(1) translateY(-15px);
+    transition-timing-function: cubic-bezier(0.5, 1, 0.6, 1.4);
+}
+
+
+.toy-card__image{
+    display:flex;
+    justify-content: center;
+    height: 300px;
+}
+
+.toy-card__image img {
+    position: relative;
+    height: 290px;
+    z-index: 1;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.toy-card:hover .toy-card__image {
+    transition: 1.5s;
+    transform: scale(1.1) translateY(-15px);
+    transition-timing-function: cubic-bezier(0.5, 1, 0.6, 1.4);
+}
+
+.toy-card__name {
+    background:  orange;
+    position: relative;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 26px;
+}
+
+.toy-card__description {
+    font-size: 13px;
+    background: white;
+    padding-bottom:0;
+    padding: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    height: 75px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.toy-card:hover .toy-card__description{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    transform: scale(1) translateY(-15px);
+    transition-timing-function: cubic-bezier(0.5, 1, 0.6, 1.4);
+    transition: 1.5s;
+    padding: 20px;
+}
+
+.toy-card__unit-stats{
+    background:  orange;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    opacity: 0;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+
+.toy-card:hover .toy-card__unit-stats {
+    opacity:100%;
+    transform: scale(1) translateY(-15px);
+    transition-timing-function: cubic-bezier(0.5, 1, 0.6, 1.4);
+    transition: 1.5s;
+}
+
+.one-third {
+    padding-bottom:0;
+    padding: 10px;
+}
+
+.two-third {
+    border-left: 1px solid black; 
+    border-right: 1px solid black;
+    padding-bottom:0;
+    padding: 10px;
+}
+
+.tree-third {
+    padding-bottom:0;
+    padding: 10px;
+}
+
+.stat{
+    font-size: 25px;
+}
+
+.stat-value{
+    font-size: 15px;
+}
+
+.woody .toy-card__name, .woody .toy-card__unit-stats {
+    background-color: orange;
+}
+
+/*Pour Buzz l'éclair, méthode différent à cause de l'accent et '*/
+.toy-card__name, .toy-card__unit-stats {
+    background-color: green;
+}
+
+.pil-poil .toy-card__name, .pil-poil .toy-card__unit-stats {
+    background-color: rgb(70, 34, 6);
+}
+
+.alien .toy-card__name, .alien .toy-card__unit-stats {
+    background-color: rgb(7, 253, 68);
+}
+
+.rex .toy-card__name, .rex .toy-card__unit-stats {
+    background-color: rgb(7, 52, 253);
+}
+
+.jessie .toy-card__name, .jessie .toy-card__unit-stats {
+    background-color: rgb(175, 150, 150);
+}
+
+.sergent .toy-card__name, .sergent .toy-card__unit-stats {
+    background-color: rgb(250, 0, 0);
+}
+
+.bayonne .toy-card__name, .bayonne .toy-card__unit-stats {
+    background-color: rgb(211, 107, 167);
+}
+
+.zigzag .toy-card__name, .zigzag .toy-card__unit-stats {
+    background-color: rgb(255, 238, 0);
+}
+
+
+.monsieur-patate .toy-card__name, .monsieur-patate .toy-card__unit-stats {
+    background-color: rgb(255, 111, 0);
+}

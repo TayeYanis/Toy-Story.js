@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Story</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <img class="logo" src="images/toy-story-logo.png" alt="Logo Toy Story">
+    <div id="card-container"></div>
+
+    <script type="text/javascript">
+        async function fetchToyData() {
+            try {
+                const response = await fetch('datastory.json');
+                const monTableau = await response.json();
+
+                monTableau.forEach(function(cartes) {
+                    const toyCard = document.createElement('div');
+                    toyCard.className = 'toy-card';
+
+                    // Ajoutez une classe spécifique basée sur le nom du jouet
+                    const nameClass = cartes.nom.toLowerCase().replace(/\s/g, '-');
+                    toyCard.classList.add(nameClass);
+
+                    toyCard.innerHTML = `
+                        <div class="toy-card__image">
+                            <img src="${cartes.photo}" alt="${cartes.nom}">
+                        </div>
+                        <div class="toy-card__name">
+                            <h1>${cartes.nom}</h1>
+                        </div>
+                        <div class="toy-card__description">
+                            <p>${cartes.info}</p>
+                        </div>
+                        <div class="toy-card__unit-stats">
+                            <div class="one-third">
+                                <div class="stat">${cartes.vie}</div>
+                                <div class="stat-value">Vie</div>
+                            </div>
+                            <div class="two-third">
+                                <div class="stat">${cartes.discretion}</div>
+                                <div class="stat-value">Discretion</div>
+                            </div>
+                            <div class="tree-third">
+                                <div class="stat">${cartes.action}</div>
+                                <div class="stat-value">Action</div>
+                            </div>
+                        </div>`;
+
+                    document.getElementById('card-container').appendChild(toyCard);
+                });
+            } catch (error) {
+                console.error('Erreur lors de la récupération des données :', error);
+            }
+        }
+
+        fetchToyData();
+    </script>
+</body>
+
+</html>
